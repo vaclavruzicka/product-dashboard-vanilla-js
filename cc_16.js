@@ -56,3 +56,46 @@ async function fetchProductsAsync() {
         handleError(error)
     }
 }
+
+//Task 4
+
+//Creating the displayProducts() function.
+function displayProducts() {
+
+    //Accesses the product container div.
+    const productContainer = document.getElementById("product-container")
+
+    //Loops the function through the first five products.
+    products.slice(0,4).forEach(product => {
+
+        //Creating a div for the product post.
+        const productPost = document.createElement('div')
+
+        //Giving the product post a class.
+        productPost.classList.add('product')
+
+        //Creating the product name as a h3.
+        const productName = document.createElement('h3')
+        productName.textContent = product.name
+
+        //Creating the product proce as a p.
+        const productPrice = document.createElement('p')
+        productPrice.textContent = `$${product.price.tofixed(2)}`
+
+        //Creating the product image as an img.
+        const productImage = document.createElement('img')
+        productImage.src = product.image
+
+        //Adding alt text. 
+        productImage.alt = product.name
+
+        //Adding the name, price, and image to the product post.
+        productPost.appendChild(productName)
+        productPost.appendChild(productPrice)
+        productPost.appendChild(productImage)
+
+        //Adding the porduct post to the product container.
+        productContainer.appendChild(productPost)
+
+    })
+}
