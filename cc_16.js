@@ -57,7 +57,7 @@ async function fetchProductsAsync() {
     }
 }
 
-//Task 4
+//Task 4 - Display the Products
 
 //Creating the displayProducts() function.
 function displayProducts() {
@@ -98,4 +98,10 @@ function displayProducts() {
         productContainer.appendChild(productPost)
 
     })
+}
+
+//Task 5 - Reusable Error Handler
+
+function handleError(error) {
+    console.error('An error occurred:' , error.message)
 }
