@@ -102,6 +102,7 @@ function displayProducts() {
 
 //Task 5 - Reusable Error Handler
 
+// Creating the handleError() function
 function handleError(error) {
     console.error('An error occurred:' , error.message)
 }
