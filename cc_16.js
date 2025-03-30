@@ -60,13 +60,13 @@ async function fetchProductsAsync() {
 //Task 4 - Display the Products
 
 //Creating the displayProducts() function.
-function displayProducts() {
+function displayProducts(products) {
 
     //Accesses the product container div.
     const productContainer = document.getElementById("product-container")
 
     //Loops the function through the first five products.
-    products.slice(0,4).forEach(product => {
+    products.slice(0,5).forEach(product => {
 
         //Creating a div for the product post.
         const productPost = document.createElement('div')
@@ -76,25 +76,25 @@ function displayProducts() {
 
         //Creating the product name as a h3.
         const productName = document.createElement('h3')
-        productName.textContent = product.name
+        productName.textContent = product.fields.name
 
-        //Creating the product proce as a p.
+        //Creating the product price as a p.
         const productPrice = document.createElement('p')
-        productPrice.textContent = `$${product.price.tofixed(2)}`
+        productPrice.textContent = `$${product.fields.price}`
 
         //Creating the product image as an img.
         const productImage = document.createElement('img')
-        productImage.src = product.image
+        productImage.src = product.fields.image[0].url
 
         //Adding alt text. 
-        productImage.alt = product.name
+        productImage.alt = product.fields.name
 
         //Adding the name, price, and image to the product post.
         productPost.appendChild(productName)
         productPost.appendChild(productPrice)
         productPost.appendChild(productImage)
 
-        //Adding the porduct post to the product container.
+        //Adding the product post to the product container.
         productContainer.appendChild(productPost)
 
     })
@@ -106,3 +106,9 @@ function displayProducts() {
 function handleError(error) {
     console.error('An error occurred:' , error.message)
 }
+
+//Task 6 - Call Your Fetch Functions
+
+//Calling my two fetch functions.
+fetchProductsThen()
+fetchProductsAsync()
