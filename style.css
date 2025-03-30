@@ -1,0 +1,21 @@
+.product {
+    padding: 10px;
+    margin: 10px;
+    background-color: lightgray;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.product h3 {
+    text-align: center;
+}
+
+.product p {
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
